@@ -1,0 +1,53 @@
+package com.pao.project.model;
+
+public class BusinessClient extends Client {
+    private String companyName, cui, contactPerson;
+    private Double monthlyRevenue, monthlyExpenses;
+
+    public BusinessClient(String address, String email, String phone,
+                          String companyName, String cui, String contactPerson, Double monthlyRevenue, Double monthlyExpenses) {
+        super(address, email, phone);
+        this.companyName = companyName;
+        this.cui = cui;
+        this.contactPerson = contactPerson;
+        this.monthlyRevenue = monthlyRevenue;
+        this.monthlyExpenses = monthlyExpenses;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public String getCUI() {
+        return cui;
+    }
+
+    public Double getMonthlyRevenue() {
+        return monthlyRevenue;
+    }
+
+    public String getContactPerson() {
+        return contactPerson;
+    }
+
+    public Double getMonthlyExpenses() {
+        return monthlyExpenses;
+    }
+
+    public ClientType getClientType(){
+        return ClientType.BUSINESS;
+    }
+    public String getDisplayName(){
+        return companyName;
+    }
+    public String getIdentificationNumber(){
+        return cui;
+    }
+
+    @Override
+    public String toString() {
+        return "BusinessClient{" + "id='" + getId() + '\'' + ", companyName='" + companyName + '\'' +
+                ", CUI='" + cui + '\'' + ", contactPerson='" + contactPerson + '\'' + ", email='" + getEmail() + '\'' + ", phone='" + getPhone() + '\'' +
+                ", address='" + getAddress() + '\'' + ", monthlyRevenue=" + monthlyRevenue + ", monthlyExpenses=" + monthlyExpenses + '}';
+    }
+}
